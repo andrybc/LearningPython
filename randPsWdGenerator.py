@@ -10,3 +10,12 @@ spec1 = chr(random.randint(33,47))
 randPass = char1+spec1+num1
 
 print (randPass)
+
+ans = "yes"
+
+while ans == "yes":
+    ans = str(input("Do you want to shuffle, yes or no?: "))
+
+    if ans == "yes":
+        shrandPass = ''.join(random.sample(randPass,len(randPass)))
+        print(shrandPass)
