@@ -11,10 +11,20 @@ if weight_units == "L":
 if height_units == "F":
     apost = height.find("'")
     height_in_meters = float(height[apost-1])*0.3048
-    print(height_in_meters)
+   # print(height_in_meters)
     height_in_meters += float(height[apost+1:])*0.0254
-    print(height_in_meters)
+   # print(height_in_meters)
     height = str(height_in_meters)
 
+weight = round(weight,2)
+height = round(float(height),2)
+
 BMI = weight/(float(height)**2)
-print(BMI)
+print("Your BMI is ", round(BMI,2))
+
+if BMI >=25:
+    print("You are overweight")
+elif BMI<25 and BMI >=18.5:
+    print("You are normal weight")
+else:
+    print("You are underweight")
