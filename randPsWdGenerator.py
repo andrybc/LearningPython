@@ -10,14 +10,14 @@ while restart != "no":
     lenPass = int(input("How long do you wnat your password to be?:"))
 
     numCaps = int(input("How many capital letters would you like?: "))
-    numLow = int(input("How many lowercase letters would you like?: "))
+    #numLow = int(input("How many lowercase letters would you like?: "))
     numNumb = int(input("How many numbers would you like?: "))
     numSpec = int(input("How many special characters would you like?: "))
-
-    userLen = numCaps+numLow+numSpec
+    numLow = lenPass-(numCaps+numNumb+numSpec)
+    
 
     restartSizeError = "no"
-    if userLen > lenPass:
+    if numLow <0:
         restartSizeError = str(input("""You provided more characters than the length you wanted
         do you want to restart? """))
     if restartSizeError == "yes":
@@ -63,6 +63,8 @@ while restart != "no":
 
     if restart == "yes":
         continue
+    elif restart == "no":
+        break
 
 
 
